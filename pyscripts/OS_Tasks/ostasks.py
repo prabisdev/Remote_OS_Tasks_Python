@@ -12,7 +12,7 @@ for user in userlist:
     print ("User{} does note Exist.Adding It".format(user))
     print("###############################")
     print()
-    os.system("useradd {}".formar(user))
+    os.system("useradd {}".format(user))
   else:
     print("User Already Exists.Skipping it")
     print("################################")
@@ -27,4 +27,16 @@ else:
   print("Group Already Exists. Skipping it")
   print("##################################")
   print()
-  
+
+
+### Adding Users to Group
+for user in userlist:
+  print("Adding User {} in the group ProjectP1".format(user))
+  if exitcode != 0:
+    print ("User{} does note Exist.Adding It".format(user))
+    print("###############################")
+    print()
+    os.system("usermod G projectP1 {}".format(user))
+  else:
+    print("User Already Exists.Skipping it")
+    print("################################")
