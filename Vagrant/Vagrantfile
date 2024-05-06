@@ -20,3 +20,13 @@ Vagrant.configure("2") do |config|
            vb.cpus = 2
            end
       end
+ 
+### VM - 3
+     
+    # Configuration for web02
+    config.vm.define "web02" do |web02|
+        web02.vm.box = "centos/7"
+        web02.vm.hostname = "web02"
+        web02.vm.network "private_network", ip: "192.168.56.33"
+      end
+    
