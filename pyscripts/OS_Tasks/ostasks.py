@@ -37,6 +37,20 @@ for user in userlist:
     print("###############################")
     print()
     os.system("usermod G projectP1 {}".format(user))
-  else:
-    print("User Already Exists.Skipping it")
-    print("################################")
+  
+### Creating a Dir and Changing Ownership and Editing Permissions
+
+print ("Adding Directory")
+print("###############################")
+print()
+
+if os.path.isdir("/opt/ ProejctP1"):
+  print("Directory already exists, Skipping it")
+else:
+  os.mkdir("/opt/ ProejctP1")
+
+print("Assigning Permissions and ownership to the directory")
+print("###############################")
+print()
+os.system("chown : ProjectP1 /opt/ProjectP1")
+os.system("chmod 770 /opt/ProjectP1")
