@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+## Checking weather users exists and adding Users
 import os
 userlist = ["alpha", "beta", "gama"]
 
@@ -13,5 +14,17 @@ for user in userlist:
     print()
     os.system("useradd {}".formar(user))
   else:
-    print("User Already Exists")
+    print("User Already Exists.Skipping it")
     print("################################")
+  
+### Checking the group availibility and adding group
+exitcode = os.system("grep ProjectP1 /etc/group")
+if exitcode ! = 0:
+  print("Group ProjectP1 does not exists.Adding it ")
+   print("################################")
+   print()
+else:
+  print("Group Already Exists. Skipping it")
+  print("##################################")
+  print()
+  
