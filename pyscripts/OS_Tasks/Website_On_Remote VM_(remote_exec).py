@@ -12,3 +12,14 @@ def system_info():
 
   print "System uptime."
   local("uptime")
+
+def remote_exec():
+  print "Get System Info"
+  run("hostname")
+  run("uptime")
+  run("df -h")
+  run("free -m")
+
+  sudo("yum install mariadb-server -y")
+  sudo("systemctl start mariadb")
+  sudo("systemctl enable mariadb")
