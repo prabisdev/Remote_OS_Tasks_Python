@@ -1,5 +1,5 @@
 from fabric.api import *
-env.user = 'devops'
+env.user = 'username on remote VM'
 def greeting(msg):
   print "Good %s" % msg
 
