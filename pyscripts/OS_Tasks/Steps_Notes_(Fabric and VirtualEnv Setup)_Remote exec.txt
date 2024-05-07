@@ -1,0 +1,57 @@
+Local execution
+
+
+Fabric for Remote OS Tasks
+
+Setting up pip
+
+wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
+install python 3.7
+python get-pip.py
+pip install 'Fabric Version' - Uses SSH to connect to remote machine
+
+mkdir fabric
+cd into it
+create fabfile.py - Here we write python functions
+fab -l - you will see function in a file
+fab function name:arg name - (OR You can define args withing the function - Check python files)
+
+
+
+### Create a user in remote machines with sudo previliges
+SSH into - Add User (With password)- Add to Suodoers file (visudo - Search for root option under you add new user - And make it NOPASSWD: (When it does sudo it does not askk password)
+
+Edit SSH config file in remote machines (vi /etc/ssh/sshd-config - And Enable Password based Login)
+systemctl restart sshd
+
+## Repeat the same for another machine to
+## Now Verify the SSH to remote Machine using ip or username and password
+ssh username@ip - Authenticate
+##Test Same for all machines
+## The best way is using SSH keys 
+Generate a ssh key and copy the key to remote machine using user details of remote machine
+ssh-copy-id username@ip 
+##Now verify it should be accessed without any credentials
+## Do the same for root user also - To be Accessed from root user
+
+## Now run the fabric file in remote machines
+fab -H ip -u username -p remote_exec  (with password)
+fab -H ip -u username remote_exec (After Copying Shh key)
+
+### Create Virtual ENV
+pip virtualenv
+pip install virtualenv'C
+virtualenv automation-env -which will create dir (automation-env) - which contains python lib and enterpreter
+active the dir by - (suource bin/activate)
+- Now you can install any env here for accessing using python without using system python lib
+
+
+
+###key methods
+local 
+sudo
+run
+
+
+
+
