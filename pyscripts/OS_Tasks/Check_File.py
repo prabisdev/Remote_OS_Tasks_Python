@@ -6,7 +6,5 @@ if os.path.isdir(path):
 elif os.path.isfile(path):
     print("It is file")
 else:
-    print("File or dir does not exist")#
-
-Just testing the merge branch options
+    print("File or dir does not exist")
 
